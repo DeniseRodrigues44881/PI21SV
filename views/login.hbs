@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+    <br>
+    <a href={{home}}>Home</a>
+    <div class="row justify-content-center">
+        <div class="col-md-6 card">
+            <diV>
+                {{#if messages.error}}
+                <div class="alert alert-warning alert-dismissible" role="alert">
+                    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                    {{messages.error}}
+                </div>
+                {{/if}}
+            </diV>
+            <br>
+            <h4>Login:</h4>
+            <form method="POST" action={{login}}>
+                <div>
+                    <label for="text" class="form-label">Username:</label>
+                    <input type="text" id="username" name="username" class="form-control" />
+                </div>
+                <div>
+                    <label for="text" class="form-label">Password:</label>
+                    <input type="password" id="password" name="password" class="form-control" />
+                </div>
+                <br>
+                <div>
+                    <input type="submit" value="Log In" class="form-control btn btn-primary" />
+                </div>
+                <br>
+            </form>
+            <form hidden="true" method="POST" action={{logout}}>
+                <div>
+                    <input type="submit" value="Log Out" class="form-control btn btn-primary" />
+                </div>
+                <br>
+            </form>
+        </div>
+    </div>
+    <br>
+    <div class="row justify-content-center">
+        <div class="col-md-6 card">
+            <br>
+            <h4>Register:</h4>
+            <form method="POST" action={{register}}>
+                <div>
+                    <label for="text" class="form-label">Username:</label>
+                    <input type="text" id="username" name="username" class="form-control" />
+                </div>
+                <div>
+                    <label for="text" class="form-label">Password:</label>
+                    <input type="password" id="password" name="password" class="form-control" />
+                </div>
+                <br>
+                <div>
+                    <input type="submit" value="Sign up" class="form-control btn btn-primary" />
+                </div>
+                <br>
+            </form>
+        </div>
+    </div>
+</html>

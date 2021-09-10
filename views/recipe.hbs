@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+
+<h1>{{title}}</h1>
+
+<div class="recipe">
+    <h2>{{recipeName}}</h2>
+    <img src={{image}} alt="no_image_found.png">
+    <div>
+    {{{summary}}}
+    </div>
+
+    {{#if groups}}
+    <div class="container">
+        <h3>Adicionar ao grupo:</h3>
+        <div>
+            <form method="POST" action="../group/recipe">
+                <div>
+                    {{#each groups}}
+                    <input type="radio" id={{id}} name="groupId" value={{id}}>
+                    <label for="group">{{name}}</label><br>
+                    {{/each}}
+                    <input type="hidden" name="recipeId" value={{recipeId}} />
+                </div>
+                <div>
+                    <input type="submit" class="btn btn-primary" value="Add to group"></input>
+                </div>
+            </form>
+        </div>
+    </div>
+    
+</div>
+
+{{else}}
+<a href="../group/list">View groups</a>
+{{/if}}
+<br>
+<a href="..">Home Page</a>
+
+</html>

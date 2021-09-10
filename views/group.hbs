@@ -1,0 +1,22 @@
+<h1>{{title}}</h1>
+
+<div class="group">
+    <h2>{{name}}</h2>
+    <p>{{description}}</p>
+
+    <div class="container">
+        {{#each recipes}}
+        <div class="col-sm-3">
+            <div class="card" style="width: 18rem;">
+                <div class="card-body">
+                    <h5 class="card-title">{{title}}</h5>
+                    <img src={{image}} alt={{title}} width="100%">
+                    <a href="#" class="card-link"><a href="../recipe/{{id}}">Recipe details</a>
+                </div>
+            </div>
+        </div>
+        {{/each}}
+    </div>
+</div>
+
+<a href="../../app">Home Page</a>

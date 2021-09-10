@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+
+<div class="container">
+    <h1>{{title}}</h1>
+
+    <a href={{popular}}>Most Popular Recipes</a>
+    <br>
+    <a href={{login}}>Login/Register</a>
+    <br>
+    <a href={{viewGroups}}>View groups</a>
+
+    <div class="row">
+        <form method="GET" action={{searchPath}}>
+            <div>
+                <label for="text" class="form-label">Search for a recipe:</label>
+                <input name="text" id="text" type="text" class="form-control" display="block" value={{search}}>
+
+                <input type="submit" class="btn btn-primary" value="Search" style=": right;"></input>
+            </div>
+        </form>
+    </div>
+
+    <br>
+
+    <div class="container">
+        {{#if total}}
+        <p>Found {{total}} results.</p>
+        {{/if}}
+        {{#each recipes}}
+        <div class="col-sm-3">
+
+            <div class="card" style="width: 18rem;">
+                <div class="card-body">
+                    <h5 class="card-title">{{title}}</h5>
+                    <img src={{image}} alt={{title}} width="100%">
+                    <a href="#" class="card-link"><a href="recipe/{{id}}">Recipe details</a>
+                </div>
+            </div>
+            {{/each}}
+        </div>
+    </div>
+
+</html>

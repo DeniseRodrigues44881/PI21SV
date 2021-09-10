@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+
+<div class="container">
+    <h1>{{title}}</h1>
+
+    <div class="row">
+        {{#each groups}}
+        <div class="col-sm-3">
+            <div class="card" style="width: 18rem;">
+                <div class="card-body">
+                    <h5 class="card-title">
+                        <a href="#" class="card-link"><a href="{{id}}">{{name}}</a>
+                    </h5>
+                    <p class="card-text">{{description}}</p>
+                    <form method="POST" action="{{id}}/delete">
+                        <div>
+                            <input type="submit" class="btn btn-primary" value="Delete group"></input>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+        {{/each}}
+    </div>
+
+    <a href="create">Create a new group</a><br>
+
+    <a href="../../app">Home Page</a>
+</div>
+
+</html>
